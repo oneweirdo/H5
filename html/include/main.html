@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/project/css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="topbox">
+            <div class="mintopbox">
+                    
+                <div class="scroll">
+                        <ul class="imgs">
+                           
+                        </ul>
+                        <div class="pages">
+                           
+                        </div>
+                </div>
+                <div class="nav">
+                        <ul>
+                            <li>
+                                <a href="#">电动剃须刀</a><span>></span>
+                            </li>
+                            <li>
+                                <a href="#">电吹风</a><span>></span>
+                            </li>
+                            <li>
+                                <a href="#">理发器</a><span>></span>
+                            </li>
+                            <li>
+                                <a href="#">烫发器</a><span>></span>
+                            </li>
+                            <li>
+                                <a href="#">熨烫系列</a><span>></span>
+                            </li>
+                            <li>
+                                <a href="#">扫地机器人</a><span>></span>
+                            </li>
+                            <li>
+                                <a href="#">毛球修剪器</a><span>></span>
+                            </li>
+                            <li>
+                                <a href="#">女士剃毛器</a><span>></span>
+                            </li>
+                            <li>
+                                <a href="#">鼻毛修剪器</a><span>></span>
+                            </li>
+                            <li>
+                                <a href="#">配件</a><span>></span>
+                            </li>
+                        </ul>
+                 </div>
+                <div class="three">
+                    <ul>
+                        <li>
+                            <a href="#"><img src="/project/img/FC9602.png" alt=""></a>
+                            <div>
+                                <p>智享新“净”界</p>
+                                <p>飞科扫地机器人FC9602</p>
+                                <p>查看详情>></p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#"><img src="/project/img/FH6232.png" alt=""></a>
+                            <div>
+                                    <p>高端巨献 缔造经典</p>
+                                    <p>飞科吹风机FH6232</p>
+                                    <p>查看详情>></p>
+                                </div>
+                        </li>
+                        <li>
+                           <a href="#"><img src="/project/img/FS373.png" alt=""></a>
+                           <div>
+                                <p>超凡卓越 不只是外表</p>
+                                <p>飞科剃须刀FS373</p>
+                                <p>查看详情>></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hot">
+                <h2>热卖单品</h2>
+            <div class="minhot">
+                
+            </div>
+        </div>
+        <script src="/project/lib/jquery/jquery-1.12.4.min.js"></script>
+        <script src="/project/lib/jquery_plugins/xmcarousel/jquery.xmcarousel.js"></script>
+       
+      <script> 
+          $(".scroll").eq(0).carousel({
+			imgs : [
+				{src : "/project/img/p1.jpg", href : "#"},
+				{src : "/project/img/p2.jpg", href : "#"},
+				{src : "/project/img/p3.jpg", href : "#"},
+				{src : "/project/img/p4.jpg", href : "#"},
+			],
+			isPrevNextPage: true,
+			width: 1244,
+            height: 462,
+			duration: 2000,
+			isAuto: true,
+			type : "fade"
+        });
+        
+        </script>
+        <script type="text/html" id="product_one">
+            {{each products as product}}
+                <div class="product">
+                    <div class="title">{{product.title}}</div>
+                    <div class="price">{{product.price.toFixed(2)}}</div>
+                    <div class="img"><img src="{{product.img}}"></div>
+                    <input type="hidden" class="id" value="{{product.id}}">
+                </div>
+            {{/each}}
+            
+        </script>
+        <script src="/project/lib/requirejs/require.js" data-main="/project/js/main.js"></script>
+    </body>
+</html>

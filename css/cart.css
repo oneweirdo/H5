@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style: none; }
+
+.cart {
+  width: 1244px;
+  margin: 0 auto; }
+  .cart .top {
+    width: 1244px;
+    height: 42px;
+    background: #efefef; }
+    .cart .top .checkbox_top {
+      position: absolute;
+      line-height: 42px;
+      height: 42px; }
+    .cart .top .product_top {
+      display: inline-block;
+      margin-left: 50px;
+      height: 42px;
+      line-height: 42px;
+      width: 689px; }
+    .cart .top .price_top {
+      display: inline-block;
+      width: 132px;
+      height: 42px;
+      line-height: 42px; }
+    .cart .top .count_top {
+      display: inline-block;
+      width: 134px;
+      height: 42px;
+      line-height: 42px;
+      text-align: center; }
+    .cart .top .scale_top {
+      display: inline-block;
+      margin-left: 91px;
+      width: 78px;
+      line-height: 42px;
+      height: 42px; }
+    .cart .top .do_top {
+      display: inline-block;
+      width: 45px;
+      height: 42px;
+      line-height: 42px; }
+  .cart .pro .row {
+    width: 1244px;
+    height: 142px;
+    font-size: 17px;
+    border-bottom: 1px solid #cccccc; }
+    .cart .pro .row img {
+      height: 100%; }
+    .cart .pro .row .checkbox_little {
+      position: absolute;
+      line-height: 142px;
+      height: 142px; }
+    .cart .pro .row .product_cart {
+      float: left;
+      display: flex;
+      align-items: center;
+      margin-left: 50px;
+      height: 142px;
+      line-height: 142px;
+      width: 689px; }
+    .cart .pro .row .price_cart {
+      float: left;
+      display: flex;
+      align-items: center;
+      width: 132px;
+      height: 142px;
+      line-height: 142px; }
+    .cart .pro .row .count_cart {
+      float: left;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 140px;
+      height: 142px;
+      line-height: 142px; }
+      .cart .pro .row .count_cart .num {
+        display: inline-block;
+        height: 30px;
+        width: 75px;
+        text-align: center; }
+      .cart .pro .row .count_cart .reduce {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        font-size: 16px;
+        width: 25px;
+        border: 1px solid #cccccc;
+        margin-right: 2px;
+        cursor: pointer; }
+      .cart .pro .row .count_cart .add {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        width: 25px;
+        font-size: 16px;
+        border: 1px solid #cccccc;
+        margin-left: 2px;
+        cursor: pointer; }
+    .cart .pro .row .scale_cart {
+      float: left;
+      display: flex;
+      align-items: center;
+      margin-left: 91px;
+      width: 78px;
+      line-height: 142px;
+      height: 142px; }
+    .cart .pro .row .do_cart {
+      float: left;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 45px;
+      height: 142px;
+      line-height: 142px; }
+  .cart .bottom {
+    position: relative;
+    width: 1244px;
+    height: 246px;
+    background: #ffffff; }
+    .cart .bottom .p1 {
+      line-height: 72px;
+      height: 72px;
+      color: #9fa0a0; }
+      .cart .bottom .p1 span {
+        cursor: pointer;
+        margin-left: 50px; }
+    .cart .bottom .p2 {
+      height: 35px;
+      line-height: 35px;
+      font-size: 15px;
+      margin-top: 65px;
+      float: right; }
+      .cart .bottom .p2 span {
+        margin-left: 35px;
+        font-size: 35px;
+        color: #ff7c44; }
+    .cart .bottom .p3 {
+      position: absolute;
+      top: 196px;
+      width: 1244px;
+      height: 37px;
+      border: none;
+      float: right; }
+      .cart .bottom .p3 button {
+        float: right;
+        height: 37px;
+        width: 148px;
+        border: none;
+        cursor: pointer; }
+      .cart .bottom .p3 .buy_more {
+        background: #fafafa; }
+      .cart .bottom .p3 .buy_end {
+        background: #ff7c44; }
+
+/*# sourceMappingURL=cart.css.map */

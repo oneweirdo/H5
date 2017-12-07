@@ -1,0 +1,84 @@
+ <!DOCTYPE html>
+ <html lang="en">
+     <head>
+         <title></title>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link href="/project/css/header.css" rel="stylesheet">
+         <link rel="stylesheet" href="/project/font/iconfont.css">
+     </head>
+     <body>
+            <header>
+                    <div class="login">
+                        <i class="icon iconfont icon-shoucang"><a href="#">收藏</a></i>
+                        <i class="icon iconfont icon-weixin"><a href="#">分享</a></i>
+                        <p><a href="/project/html/login.html" id="login_none">登录</a><span class="login_reg"></span>|<a href="/project/html/registr.html">注册</a></p>
+                    </div>
+                    <div class="logo">
+                        <h1>
+                            <a href="/project/html/index.html">
+                                <img src="/project/img/login.png" alt="">
+                                <span>飞科商城</span>
+                            </a>
+                        </h1>
+                        <a href="/project/html/index.html" class="home">
+                            <i class="icon iconfont icon-shouye"></i>
+                            <span>首页</span>
+                        </a>
+                        <input type="text" placeholder="剃须刀" class="word">
+                        <div class="info">
+                            
+                        </div>
+                        <a href="#" class="ser"></a>
+                        <a href="/project/html/cart.html" class="cart">
+                            <i class="icon iconfont icon-gouwuche"></i>
+                            <span >购物车（<span class="count_1">0</span>）</span>
+                            <div class="none">
+                                <dl>
+                                    <dt>
+                                        <p>总计<span class="count_2">0</span>件商品</p>
+                                        <p>合计：<span class="money">0元</span></p>
+                                    </dt>
+                                    <dd class="cart2">
+                                        去购物车结算
+                                    </dd>
+                                </dl>
+                            </div>
+                    </div>
+                </header>
+                <script src="/project/lib/jquery/jquery-1.12.4.min.js"></script>
+                <script>
+                    $(".word").keyup (function(){
+                        var _s = document.createElement("script");
+                        _s.src = "https://suggest.taobao.com/sug?code=utf-8&q="+ this.value +"&callback=handle"
+                        $("body")[0].appendChild(_s);
+                        $("body")[0].removeChild(_s);
+                        $(".info").css("display","block");
+                    });
+                   
+                    function handle(data) {
+                        var html = "";
+                        data.result.forEach(function(curr){
+                            html += `<div>${curr[0]}</div>`;
+                        });
+                     $(".info").html(html);
+                    //  $(".info").on("mouseenter", "div", function() {
+                    //     console.log("sas");
+                    //     $(this).css("background","red");
+                    // });
+                    $(".info").children("div").on("mouseenter",function() {
+                        $(this).css("background","#cccccc");
+                    });
+                    $(".info").children("div").on("mouseleave",function() {
+                        $(this).css("background","white");
+                    });
+                    $(".info").children("div").on("click",function() {
+                        var text=$(this).html();
+                        $(".word").val(text);
+                        $(".info").css("display","none");
+                    });
+                 }
+                   
+            </script>
+     </body>
+ </html>

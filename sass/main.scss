@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.topbox{
+    height: 634px;
+    background: #ffffff;
+}
+.topbox .mintopbox{
+    width: 1244px;
+    height: 634px;
+    background: #f3f3f3;
+    margin: 0 auto;
+}
+.topbox .mintopbox .nav{
+    position: absolute;
+    width: 186px;
+    height: 462px;
+    background: black;
+    opacity: .7;
+}
+.topbox .mintopbox .scroll{
+    position: relative;
+    float: left;
+    width: 1244px;
+    height: 462px;
+    background: yellow;
+}
+.topbox .mintopbox .three{
+    float: left;
+    width: 1244px;
+    height: 172px;
+    overflow: hidden;
+}
+.topbox .mintopbox .three ul li{
+    float: left;
+    position: relative;
+    height: 172px;
+    width: 413px;
+    border-right:1px solid #cccccc;
+ 
+}
+.topbox .mintopbox .three ul li div{
+    height: 172px;
+    width: 413px;
+    position: absolute;
+    top:172px;
+    left: 0;
+    opacity: .5;
+    transition: top 1s;
+    background: black;
+}
+.topbox .mintopbox .three ul li:hover div{
+    top:0px;
+}
+.topbox .mintopbox .three ul li div p{
+    color: white;
+    text-align: center;
+}
+.topbox .mintopbox .three ul li div{
+    
+    p:nth-child(1){
+        font-size: 20px;
+        margin-top: 30px;
+      }
+    p:nth-child(2){
+        margin-top: 15px;
+        font-size: 15px;
+    }
+    p:nth-child(3){
+        margin-top: 25px;
+        margin-left: 100px;
+        border:1px solid #ffffff;
+        width: 200px;
+        height: 20px;
+    }
+}
+
+
+.scroll .imgs {
+    position: relative;
+	list-style: none;
+}
+
+.scroll .imgs li {
+    position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.scroll .imgs li img {
+	border:0px;
+}
+
+.scroll .pages {
+	width:15%;
+	position: absolute;
+    bottom: 20px;
+    right: 0;
+    
+}
+
+.scroll .pages i {
+	display: inline-block;
+	width:30px;
+	height: 20px;
+	margin:5px;
+	background: #7a7d85;
+}
+.scroll .pages i.current {
+	background: #282b33;
+}
+.topbox .mintopbox .nav ul{
+    margin-top: 20px;
+}
+.topbox .mintopbox .nav ul li{
+    height: 40px;
+    width: 186px;
+    font-size: 15px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+}
+.topbox .mintopbox .nav ul li a{
+    height: 45px;
+    width: 186px;
+    padding-left: 20px;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.topbox .mintopbox .nav ul li span{
+    float: right;
+    margin-right: 15px;
+    color: white;
+}
+.topbox .mintopbox .nav ul li:hover{
+    background:#0aa4fe;
+}
+.hot{
+    height: 1147px;
+    margin-top: 15px;
+    background: #f6f6f6;
+}
+.hot .minhot{
+    float: left;
+    width: 1244px;
+    height: 1147px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.hot h2{
+    height: 50px;
+    padding-left:15px; 
+    line-height:50px;
+}
+.hot .minhot .product{
+    float: left;
+    position: relative;
+    width: 300px;
+    height: 335px;
+    background: #ffffff;
+    margin-left: 11px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    transition: all 0.5s;
+}
+.hot .minhot .product .title{
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 25px;
+}
+.hot .minhot .product .price{
+    font-size: 14px;
+    margin-left: 25px;
+}
+.hot .minhot .product .img{
+    text-align: center;
+}
+.hot .minhot .product:hover{
+    box-shadow: 0px 10px 30px #888888;
+}

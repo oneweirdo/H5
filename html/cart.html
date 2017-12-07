@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/project/css/cart.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header">
+            
+        </div>
+        <div class="cart">
+            <div class="top">
+                <input type="checkbox" class="checkbox_top">
+                <span class="product_top">商品</span>
+                <span class="price_top">单价</span>
+                <span class="count_top">数量</span>
+                <span class="scale_top">小计</span>
+                <span class="do_top">操作</span>
+            </div>
+            <div class="pro">
+                
+            </div>
+            <div class="bottom">
+                <p class="p1"><span class="clear">清空购物车</span> <span class="delete">删除所选项</span></p>
+                <p class="p2">商品总计：<span class="money"></span></p>
+                <p class="p3">
+                        <button class="buy_end">去结算</button>
+                    <button class="buy_more" >继续购物</button>
+                </p>
+            </div>
+        </div>
+        <div class="footer">
+            
+        </div>
+        <script type="text/html" id="cart_template">
+            {{each products as prod}}
+            <div class="row">
+                <input type="hidden" class="id" value="{{prod.id}}" />
+                <input type="checkbox" class="checkbox_little">
+                <div class="product_cart">
+                    <img src="{{prod.img}}"/>
+                   {{prod.title}}
+                </div>
+                <div class="price_cart">{{prod.price}}</div>
+                <div class="count_cart"><span class="reduce">-</span><input type="text" class="num" value="{{prod.count}}"><span class="add">+</span></div>
+                <div class="scale_cart">{{prod.count*(prod.price).slice(1)}}</div>
+                <div class="do_cart"><span>X</span></div>
+            </div>
+            {{/each}}
+        </script>
+        <script src="/project/lib/requirejs/require.js" data-main="/project/js/cart.js"></script>
+    </body>
+</html>

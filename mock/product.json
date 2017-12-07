@@ -1,0 +1,15 @@
+{
+    "status":1,
+    "message":"success",
+    "data":[
+        {"id":1,"title":"飞科智能剃须刀FS867","img":"/project/img/FS867.png","price":129,"img_2":"/project/img/FS867_2.jpg"},
+        {"id":2,"title":"飞科智能剃须刀FS339","img":"/project/img/FS339.png","price":119,"img_2":"/project/img/FS339_2.jpg"},
+        {"id":3,"title":"飞科电吹风FH6273","img":"/project/img/FH6273.png","price":89,"img_2":"/project/img/FH6273_2.jpg"},
+        {"id":4,"title":"飞科电吹风FH6105","img":"/project/img/FH6105.png","price":149,"img_2":"/project/img/FH6105_2.jpg"},
+        {"id":5,"title":"飞科理发器FC5808","img":"/project/img/FC5808.png","price":149,"img_2":"/project/img/FC5808_2.jpg"},
+        {"id":6,"title":"不锈钢/超强吸风","img":"/project/img/FR5001.png","price":29,"img_2":"/project/img/FR5001_2.jpg"},
+        {"id":7,"title":"飞科毛球修剪器FR5006","img":"/project/img/FR5006.png","price":35,"img_2":"/project/img/FR5006_2.jpg"},
+        {"id":8,"title":"飞科电熨斗FI9311","img":"/project/img/FI9311.png","price":85,"img_2":"/project/img/FI9311_2.jpg"},
+        {"id":9,"title":"飞科扫地机器人FC9601","img":"/project/img/FC9601.png","price":1229,"img_2":"/project/img/FC9601_2.jpg"}
+    ]
+}

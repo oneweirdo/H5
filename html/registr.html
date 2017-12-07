@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/project/lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/project/css/registr.css">
+    </head>
+    <body>
+            <div class="header">
+                
+            </div>
+            <div class="container">
+                <p>欢迎注册飞科商城</p>
+                <form action="#" method="post" class="form_3">
+                        <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-list-alt"></i>
+                                </span>
+                                <input type="text" placeholder="请输入验证码" class="form-control" id="sure">
+                            </div>
+                            <img src="" id="gen_code">
+                            <div id="info">
+                                
+                            </div>
+                   <div class="input-group">
+                       <span class="input-group-addon">
+                           <i class="glyphicon glyphicon-user"></i>
+                       </span>
+                       <input type="text" placeholder="请输入手机号" class="form-control" id="phone">
+                       
+                   </div>
+                   <span id="phone_info"></span>
+                   <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-envelope"></i>
+                    </span>
+                    <input type="text" placeholder="请输入邮箱" class="form-control" id="email">
+                    <span id="email_info"></span>
+                </div>
+                   <div class="input-group">
+                       <span class="input-group-addon">
+                           <i class="glyphicon glyphicon-lock"></i>
+                       </span>
+                       <input type="password" placeholder="请输入密码" class="form-control" id="password">
+                   </div>
+                   <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </span>
+                        <input type="password" placeholder="请输入密码" class="form-control" id="">
+                    </div>
+                   
+                          <a href="#" class="ser">
+                              《飞科商城用户服务协议》
+                          </a>
+                          <input type="button" class="btn btn-success btn-block" value="同意协议并注册" id="btn">
+                </form>
+            </div>
+            <div class="footer">
+                
+            </div>
+            <script src="/project/lib/requirejs/require.js" data-main="/project/js/index.js"></script>
+            <script src="/project/lib/jquery/jquery-1.12.4.min.js"></script>
+            <script>
+                
+                function generateCode() {
+			$.ajax({
+				type : "get",
+				url : "http://route.showapi.com/932-2",
+				data : {
+					showapi_appid : "29550",
+					showapi_sign : "08402fce064a484baad949d9a18f75e7"
+				},
+				dataType : "json",
+				success : function(data){
+					var val = data.showapi_res_body;
+					$("#gen_code").attr("src",val.image);
+					$("#gen_code").attr("sid",val.sid) ;// 添加自定义属性，保存关联标识
+				}
+			});
+		}
+		generateCode();
+		$("#gen_code").on("click",generateCode);
+		$("#sure").on("blur",function(){
+			$.ajax({
+				type : "get",
+				url : "http://route.showapi.com/932-1",
+				data : {					
+					showapi_appid : "29550",
+					showapi_sign : "08402fce064a484baad949d9a18f75e7",
+					checkcode : $("#sure").val(),
+					sid : $("#gen_code").attr("sid")
+				},
+				dataType : "json",
+				success : function(data){
+					if(data.showapi_res_body.valid)
+                        {
+                            $("#info").text("输入正确");
+                         }
+					else
+                        {
+                            $("#info").text("验证码输入有误");
+                        }
+				}
+			});
+        });
+
+        var isUsernameExist = true; // 标记用户名是否存在 true:存在   false:不存在
+		$("#phone").on("blur",function() {
+            $.ajax({
+				type : "get",
+				url : "/project/php/check.php",
+				data : {phone : $(this).val()},
+				dataType : "json",
+				success : function(respData){
+					if (respData.status === 1){
+						$("#phone_info").text("手机号已被注册");
+						isUsernameExist = true;
+					} else {
+						$("#phone_info").text("可用");
+						isUsernameExist = false;
+					}
+				}
+			});
+        });
+			/* 使用ajax动态验证用户名是否已存在 */
+            $("#btn").on("click",function () {
+                if (!isUsernameExist) {
+				/* 通过ajax向服务器发送注册用户信息，保存注册用户 */
+				$.ajax({
+					type : "post",
+					url : "/project/php/registr.php",
+					data : {
+						password : $("#password").val(),
+						phone : $("#phone").val(),
+						email : $("#email").val(),
+					},
+					dataType : "json",
+					success : function(data){
+						if (data.status === 1) { // 注册成功
+							location = "/project/html/login.html";
+						} else {
+							$("#error").text("注册失败，请稍候重试");
+						}
+					}
+				});
+			  }
+            }) ;
+            </script>
+    </body>
+</html>
